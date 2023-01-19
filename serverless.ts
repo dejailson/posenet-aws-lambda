@@ -1,11 +1,11 @@
 import type { AWS } from '@serverless/typescript';
 
-import hello from '@functions/hello';
+import {heathCheck,poseDetection} from '@functions/posenet'
 
 const serverlessConfiguration: AWS = {
   service: 'posenet-aws-lambda',
   frameworkVersion: '3',
-  plugins: ['serverless-esbuild'],
+  plugins: ['serverless-esbuild','serverless-offline'],
   provider: {
     name: 'aws',
     runtime: 'nodejs14.x',
@@ -19,7 +19,7 @@ const serverlessConfiguration: AWS = {
     },
   },
   // import the function via paths
-  functions: { hello },
+  functions: { heathCheck, poseDetection },
   package: { individually: true },
   custom: {
     esbuild: {
