@@ -3,7 +3,7 @@ import * as tf from '@tensorflow/tfjs-node';
 import '@tensorflow/tfjs-node';
 import * as fs from 'fs';
 
-export default class PosenetService{
+export default class PosenetProcessService{
     
     async poseDetection(poseDetectionRequest){
 

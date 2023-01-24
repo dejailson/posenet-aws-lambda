@@ -1,9 +1,15 @@
-import PosenetService from "../services/posenetService.js"
+import firebaseFactory from '@factories/authFireBaseFactory'
+import posenetFactory from '@factories/posenetFactory'
+
+import PosenetService from '@services/posenetService'
+
+const authFireBaseService = firebaseFactory.generateInstanceAuthFireBase()
+const posenetProcess = posenetFactory.generatePosenetInstance()
 
 const generateInstance = () => {
-    return new PosenetService()
+    return new PosenetService(authFireBaseService,posenetProcess)
 }
 
-export {
+export default{
     generateInstance
 }

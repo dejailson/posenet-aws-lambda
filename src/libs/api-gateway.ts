@@ -6,7 +6,7 @@ export type ValidatedEventAPIGatewayProxyEvent<S> = Handler<ValidatedAPIGatewayP
 
 const CONTENT_TYPE = {'content-type': 'application/json'}
 
-export const _200 = (response: Record<string, unknown>) => {
+export const _200 = (response: Record<string, unknown> | string) => {
   return {
     CONTENT_TYPE,
     statusCode: 200,
@@ -14,10 +14,27 @@ export const _200 = (response: Record<string, unknown>) => {
   }
 }
 
-export const _400 = (response: Record<string, unknown>) => {
+export const _400 = (response: Record<string, unknown> | string) => {
   return {
     CONTENT_TYPE,
     statusCode: 400,
+    body: JSON.stringify(response)
+  }
+}
+
+
+export const _401 = (response: Record<string, unknown> | string) => {
+  return {
+    CONTENT_TYPE,
+    statusCode: 401,
+    body: JSON.stringify(response)
+  }
+}
+
+export const _404 = (response: Record<string, unknown> | string) => {
+  return {
+    CONTENT_TYPE,
+    statusCode: 401,
     body: JSON.stringify(response)
   }
 }

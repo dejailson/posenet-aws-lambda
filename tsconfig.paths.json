@@ -5,10 +5,11 @@
       "@functions/*": ["src/functions/*"],
       "@libs/*": ["src/libs/*"],
       "@utils/*":["src/utils/*"],
-      "@services/*":["src/services/*"],
+      "@services/*":["src/service/*"],
       "@entities/*":["src/entities/*"],
       "@factories/*":["src/factories/*"],
-      "@repositories/*":["src/repositories/*"]
+      "@repositories/*":["src/repositories/*"],
+      "@errors/*":["src/errors/*"]
     }
   }
 }

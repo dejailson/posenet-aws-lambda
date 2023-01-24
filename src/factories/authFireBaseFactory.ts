@@ -1,7 +1,7 @@
 import AuthFireBaseService from '@utils/services/authFireBaseService'
 import FireBaseRepository from '@repositories/fireBaseRepository'
 
-const generateInstanceAuthFireBase = () => {
+const generateInstanceAuthFireBase = (): AuthFireBaseService => {
     const fireBaseRepository = new FireBaseRepository();
     const authFireBaseService = new AuthFireBaseService({
         fireBaseRepository
@@ -10,6 +10,6 @@ const generateInstanceAuthFireBase = () => {
     return authFireBaseService;
 }
 
-export {
+export default {
     generateInstanceAuthFireBase
 }

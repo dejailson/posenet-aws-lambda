@@ -1,9 +1,10 @@
-import PosenetService from "../services/posenetService.js"
+import PosenetProcessService from '@utils/services/posenetProcessService';
+
 
 const generatePosenetInstance = () => {
-    return new PosenetService()
+    return new PosenetProcessService()
 }
 
-export {
+export default{
     generatePosenetInstance
 }
