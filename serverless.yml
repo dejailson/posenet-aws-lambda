@@ -1,0 +1,28 @@
+service: aws-projeto
+# app and org for use with dashboard.serverless.com
+#app: your-app-name
+#org: your-org-name
+frameworkVersion: '3'
+
+# Add the serverless-webpack plugin
+plugins:
+  #- serverless-webpack
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+functions:
+  health:
+    handler: health.check
+    events:
+      - httpApi:
+          method: get
+          path: /posenet/function/health
+  detection:
+    handler: pose-detection.detection
+    events:
+      - httpApi:
+          method: post
+          path: /posenet/function/pose-detection
